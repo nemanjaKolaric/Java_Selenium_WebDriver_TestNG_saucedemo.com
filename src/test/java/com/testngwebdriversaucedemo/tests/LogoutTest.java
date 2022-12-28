@@ -47,7 +47,7 @@ public class LogoutTest {
     }
 
     @AfterTest
-    public void close() {
-        driver.close();
+    public void quitDriver() {
+        driver.quit();
     }
 }

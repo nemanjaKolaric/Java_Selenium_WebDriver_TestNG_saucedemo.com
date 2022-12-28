@@ -55,7 +55,7 @@ public class ShoppingProcessFlowTest {
     }
 
     @AfterMethod
-    public void close() {
+    public void quitDriver() {
         driver.quit();
     }
 }

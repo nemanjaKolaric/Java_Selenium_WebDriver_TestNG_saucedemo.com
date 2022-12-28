@@ -58,7 +58,7 @@ public class CheckoutCustomerInformationsFormTest {
     }
 
     @AfterMethod
-    public void close() {
+    public void quitDriver() {
         driver.quit();
     }
 }
