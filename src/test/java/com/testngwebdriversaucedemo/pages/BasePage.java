@@ -16,13 +16,13 @@ public class BasePage {
         return Utils.waitForUrl(driver, url, Duration.ofSeconds(10));
     }
 
-    public void addItem(String item) {
-        Utils.waitForElementVisibility(driver, By.id("add-to-cart-sauce-labs-" + item + ""), Duration.ofSeconds(10))
+    public void clickAddItem(String item) {
+        Utils.waitToBeClickable(driver, By.id("add-to-cart-sauce-labs-" + item + ""), Duration.ofSeconds(10))
                 .click();
     }
 
-    public void removeItem(String item) {
-        Utils.waitForElementVisibility(driver, By.id("remove-sauce-labs-" + item + ""), Duration.ofSeconds(10))
+    public void clickRemoveItem(String item) {
+        Utils.waitToBeClickable(driver, By.id("remove-sauce-labs-" + item + ""), Duration.ofSeconds(10))
                 .click();
     }
 
@@ -31,7 +31,7 @@ public class BasePage {
     }
 
     public void clickShoppingCartLink() {
-        Utils.waitForElementVisibility(driver, By.id("shopping_cart_container"), Duration.ofSeconds(10)).click();
+        Utils.waitToBeClickable(driver, By.id("shopping_cart_container"), Duration.ofSeconds(10)).click();
     }
 
     public boolean isItemOnPage(String item) {
@@ -39,7 +39,8 @@ public class BasePage {
                 .isDisplayed();
     }
 
-    public boolean errorMessageVisible() {
-        return Utils.isPresent(driver, By.cssSelector("[data-test='error']"));
+    public boolean errorMessage() {
+        return Utils.waitForElementVisibility(driver, By.cssSelector("[data-test='error']"), Duration.ofSeconds(3))
+                .isDisplayed();
     }
 }

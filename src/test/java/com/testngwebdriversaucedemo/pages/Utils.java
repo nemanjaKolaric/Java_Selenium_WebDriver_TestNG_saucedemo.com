@@ -24,11 +24,11 @@ public class Utils {
     }
 
     public static boolean waitForUrl(WebDriver driver, String url, Duration waitInterval) {
-        return (new WebDriverWait(driver, waitInterval)).until(ExpectedConditions.urlToBe(url));
+        return new WebDriverWait(driver, waitInterval).until(ExpectedConditions.urlToBe(url));
     }
 
     public static boolean waitForText(WebDriver driver, By locator, String text, Duration waitInterval) {
-        return (new WebDriverWait(driver, waitInterval)).until(ExpectedConditions.textToBe(locator, text));
+        return new WebDriverWait(driver, waitInterval).until(ExpectedConditions.textToBe(locator, text));
     }
 
     public static boolean isPresent(WebDriver webdriver, By selector) {

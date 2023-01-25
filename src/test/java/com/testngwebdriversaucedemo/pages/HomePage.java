@@ -13,15 +13,27 @@ public class HomePage {
     }
 
     public void clickMenuButton() {
-        Utils.waitForElementVisibility(driver, By.id("react-burger-menu-btn"), Duration.ofSeconds(10)).click();
+        Utils.waitToBeClickable(driver, By.id("react-burger-menu-btn"), Duration.ofSeconds(10)).click();
+    }
+
+    public void clickAllItemsLink() {
+        Utils.waitToBeClickable(driver, By.id("inventory_sidebar_link"), Duration.ofSeconds(10)).click();
+    }
+
+    public void clickAboutLink() {
+        Utils.waitToBeClickable(driver, By.id("about_sidebar_link"), Duration.ofSeconds(10)).click();
     }
 
     public void clickLogOutLink() {
-        Utils.waitForElementVisibility(driver, By.id("logout_sidebar_link"), Duration.ofSeconds(10)).click();
+        Utils.waitToBeClickable(driver, By.id("logout_sidebar_link"), Duration.ofSeconds(10)).click();
+    }
+
+    public void clickResetAppLink() {
+        Utils.waitToBeClickable(driver, By.id("reset_sidebar_link"), Duration.ofSeconds(10)).click();
     }
 
     public void clickItemLink(String item) {
-        Utils.waitForElementVisibility(driver, By.xpath("//div[.=\"" + item + "\"]"), Duration.ofSeconds(10)).click();
+        Utils.waitToBeClickable(driver, By.xpath("//div[.=\"" + item + "\"]"), Duration.ofSeconds(10)).click();
     }
 
 }

@@ -42,7 +42,7 @@ public class ShoppingProcessFlowTest {
 
     @Test
     public void successfullShoppingFlow() {
-        basePage.addItem("backpack");
+        basePage.clickAddItem("backpack");
         basePage.clickShoppingCartLink();
         Assert.assertTrue(basePage.isItemOnPage("Sauce Labs Backpack"));
 

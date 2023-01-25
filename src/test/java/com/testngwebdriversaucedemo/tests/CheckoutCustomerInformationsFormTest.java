@@ -39,7 +39,7 @@ public class CheckoutCustomerInformationsFormTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         driver.navigate().to("https://www.saucedemo.com/");
         loginPage.signIn(dotenv.get("STANDARD_USER"), dotenv.get("VALID_PASSWORD"));
-        basePage.addItem("backpack");
+        basePage.clickAddItem("backpack");
         basePage.clickShoppingCartLink();
         checkoutPage.clickCheckoutButton();
     }
@@ -54,7 +54,7 @@ public class CheckoutCustomerInformationsFormTest {
     public void invalidlyFilledCustomerInfoFields(String firstName, String lastName, String postalCode) {
         checkoutPage.customerData(firstName, lastName, postalCode);
         checkoutPage.clickContinueButton();
-        Assert.assertTrue(basePage.errorMessageVisible());
+        Assert.assertTrue(basePage.errorMessage());
     }
 
     @AfterMethod

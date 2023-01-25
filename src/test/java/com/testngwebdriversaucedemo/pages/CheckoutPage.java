@@ -51,15 +51,15 @@ public class CheckoutPage {
     }
 
     public void clickCheckoutButton() {
-        Utils.waitForElementVisibility(driver, By.name("checkout"), Duration.ofSeconds(10)).click();
+        Utils.waitToBeClickable(driver, By.name("checkout"), Duration.ofSeconds(10)).click();
     }
 
     public void clickContinueButton() {
-        Utils.waitForElementVisibility(driver, By.name("continue"), Duration.ofSeconds(10)).click();
+        Utils.waitToBeClickable(driver, By.name("continue"), Duration.ofSeconds(10)).click();
     }
 
     public void clickFinishButton() {
-        Utils.waitForElementVisibility(driver, By.name("finish"), Duration.ofSeconds(10)).click();
+        Utils.waitToBeClickable(driver, By.name("finish"), Duration.ofSeconds(10)).click();
     }
     
     public boolean confirmationLetter(String text) {

@@ -42,37 +42,37 @@ public class AddRemoveItemTest {
 
     @Test(priority = 0)
     public void addItemFromHomePage() {
-        basePage.addItem("backpack");
+        basePage.clickAddItem("backpack");
         Assert.assertTrue(basePage.itemInShoppingCart());
     }
 
     @Test(priority = 1)
     public void removeItemFromHomePage() {
-        basePage.addItem("backpack");
-        basePage.removeItem("backpack");
+        basePage.clickAddItem("backpack");
+        basePage.clickRemoveItem("backpack");
         Assert.assertFalse(basePage.itemInShoppingCart());
     }
 
     @Test(priority = 2)
     public void addItemFromItemPage() {
         homePage.clickItemLink("Sauce Labs Backpack");
-        basePage.addItem("backpack");
+        basePage.clickAddItem("backpack");
         Assert.assertTrue(basePage.itemInShoppingCart());
     }
 
     @Test(priority = 3)
     public void removeItemFromItemPage() {
         homePage.clickItemLink("Sauce Labs Backpack");
-        basePage.addItem("backpack");
-        basePage.removeItem("backpack");
+        basePage.clickAddItem("backpack");
+        basePage.clickRemoveItem("backpack");
         Assert.assertFalse(basePage.itemInShoppingCart());
     }
 
     @Test(priority = 4)
     public void removeItemFromCheckoutPage() {
-        basePage.addItem("backpack");
+        basePage.clickAddItem("backpack");
         basePage.clickShoppingCartLink();
-        basePage.removeItem("backpack");
+        basePage.clickRemoveItem("backpack");
         Assert.assertFalse(basePage.itemInShoppingCart());
     }
 

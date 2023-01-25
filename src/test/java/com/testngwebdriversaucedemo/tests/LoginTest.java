@@ -42,7 +42,7 @@ public class LoginTest {
     @Test(dataProvider = "dataTest", dataProviderClass = DataProviderTest.class, priority = 1)
     public void invalidLogin(String username, String password) {
         loginPage.signIn(username, password);
-        Assert.assertTrue(basePage.checkUrl("https://www.saucedemo.com/"));
+        Assert.assertTrue(basePage.errorMessage());
     }
 
     @AfterMethod
