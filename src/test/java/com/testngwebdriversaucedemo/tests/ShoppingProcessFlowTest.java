@@ -51,7 +51,7 @@ public class ShoppingProcessFlowTest {
         Assert.assertTrue(basePage.isItemOnPage("Sauce Labs Backpack"));
 
         checkoutPage.clickFinishButton();
-        Assert.assertTrue(checkoutPage.confirmationLetter("THANK YOU FOR YOUR ORDER"));
+        Assert.assertTrue(checkoutPage.confirmationLetter("Thank you for your order!"));
     }
 
     @AfterMethod

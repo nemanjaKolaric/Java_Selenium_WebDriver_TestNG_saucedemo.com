@@ -47,7 +47,7 @@ public class CheckoutCustomerInformationsFormTest {
     @Test(priority = 0)
     public void validlyFilledCustomerInfoFields() {
         checkoutPage.customerData("John", "Dart", "123456");
-        Assert.assertTrue(checkoutPage.checkoutOverviewTitle("CHECKOUT: OVERVIEW"));
+        Assert.assertTrue(checkoutPage.checkoutOverviewTitle("Checkout: Overview"));
     }
 
     @Test(dataProvider = "dataTest", dataProviderClass = DataProviderTest.class)
